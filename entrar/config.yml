@@ -56,9 +56,9 @@ collections:
                 summary: "{{fields.titulo}}"
                 fields:
                   - { name: titulo, label: "Título del video", widget: string }
-                  - { name: video, label: "Archivo de video (.mp4)", widget: file, required: false, hint: "Sube el video original de tu galería (sin marca de agua). Ideal: menos de 20 MB. Si es más pesado, expórtalo en CapCut a 1080p." }
+                  - { name: video, label: "Video: archivo .mp4 o link de TikTok", widget: file, required: false, hint: "Opción 1: sube el video de tu galería (menos de 20 MB). Opción 2: «Insertar desde URL» y pega el link de UN video de TikTok (el que dice /video/…). Ambos se reproducen dentro del celular." }
                   - { name: portada, label: "Portada (foto)", widget: image, required: false, hint: "Opcional. Se ve mientras carga el video." }
-                  - { name: tiktok, label: "Link del video en TikTok", widget: string, required: false }
+                  - { name: tiktok, label: "Link del video en TikTok (opcional)", widget: string, required: false, hint: "Si subiste el archivo, aquí pon el link para que aparezca el botón de TikTok." }
                   - { name: etiqueta, label: "Texto bajo el celular (marca o tema)", widget: string, required: false, hint: "Ej. Nivea, Hevy, Gym fits" }
                   - { name: tipo, label: "Tipo de video", widget: string, required: false, hint: "Ej. Reseña, Unboxing, GRWM" }
                   - { name: vistas, label: "Vistas", widget: string, required: false, hint: "Ej. 23.9K. Déjalo vacío si no quieres mostrarlas." }

@@ -145,19 +145,31 @@ function pintar(D) {
   /* Portafolio */
   txt("#p-etiqueta", V.etiqueta); htm("#p-titulo", em(V.titulo)); txt("#p-sub", V.subtitulo);
   let n = 0;
+  /* Un video puede ser un archivo propio (.mp4) o el link de un video de TikTok */
+  const idTikTok = u => (String(u || "").match(/tiktok\.com\/.*\/video\/(\d+)/) || [])[1] || "";
+  const esArchivo = u => !!u && !idTikTok(u) && (/\.(mp4|webm|mov|m4v)(\?|$)/i.test(u) || u.startsWith("/"));
   const tarjeta = v => {
-    const i = n++, link = v.tiktok || "";
-    let medio;
-    if (v.video) medio = `<video src="${esc(v.video)}" ${v.portada ? `poster="${esc(v.portada)}"` : ""} muted loop playsinline preload="metadata"></video>`;
-    else if (v.portada) medio = `<img src="${esc(v.portada)}" alt="" loading="lazy">`;
-    else medio = `<div class="vacia" style="--fondo-tarjeta:${Object.values(FONDOS)[i % 4]}"><span class="grande">${esc(v.palabra || v.etiqueta)}</span><h3>${esc(v.titulo)}</h3>${link ? `<small>Míralo en mi TikTok</small>` : ""}</div>`;
-    const play = v.video ? `<button class="play" type="button" data-sonido aria-label="Activar sonido">${iconoPlay}</button>`
-               : link ? `<a class="play" href="${esc(link)}" target="_blank" rel="noopener" aria-label="Ver «${esc(v.titulo)}» en TikTok">${iconoPlay}</a>` : "";
-    const verTT = v.video && link ? `<a class="ver-tt" href="${esc(link)}" target="_blank" rel="noopener">${icoTT}</a>` : "";
+    const i = n++;
+    const ttId = idTikTok(v.video) || idTikTok(v.tiktok);
+    const archivo = esArchivo(v.video) ? v.video : "";
+    const link = ttId ? `https://www.tiktok.com/@${(String(v.video || v.tiktok).match(/@([^/]+)/) || [, "tiktok"])[1]}/video/${ttId}` : (v.tiktok || "");
+    let medio, play = "", verTT = "";
+    if (archivo) {
+      medio = `<video src="${esc(archivo)}" ${v.portada ? `poster="${esc(v.portada)}"` : ""} muted loop playsinline preload="metadata"></video>`;
+      play = `<button class="play" type="button" data-sonido aria-label="Activar sonido">${iconoPlay}</button>`;
+      if (link) verTT = `<a class="ver-tt" href="${esc(link)}" target="_blank" rel="noopener" aria-label="Ver en TikTok">${icoTT}</a>`;
+    } else if (ttId) {
+      /* Reproductor oficial de TikTok dentro del celular */
+      medio = `<iframe class="tt-player" src="https://www.tiktok.com/player/v1/${ttId}?loop=1&amp;music_info=0&amp;description=0&amp;rel=0&amp;native_context_menu=0&amp;fullscreen_button=0" title="${esc(v.titulo)}" loading="lazy" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>`;
+    } else {
+      medio = v.portada ? `<img src="${esc(v.portada)}" alt="" loading="lazy">`
+        : `<div class="vacia" style="--fondo-tarjeta:${Object.values(FONDOS)[i % 4]}"><span class="grande">${esc(v.palabra || v.etiqueta)}</span><h3>${esc(v.titulo)}</h3>${link ? `<small>Míralo en mi TikTok</small>` : ""}</div>`;
+      if (link) play = `<a class="play" href="${esc(link)}" target="_blank" rel="noopener" aria-label="Ver «${esc(v.titulo)}» en TikTok">${iconoPlay}</a>`;
+    }
     return `<article class="tarjeta rev d${(i % 4) + 1}">
-      <div class="telefono" data-tilt><div class="pantalla">${medio}
-        ${v.vistas ? `<span class="vistas">▶ ${esc(v.vistas)}</span>` : ""}${play}${verTT}</div></div>
-      <div class="pie-tarjeta"><span class="marca">${esc(v.etiqueta)}</span><span class="tipo">${esc(v.tipo)}</span></div>
+      <div class="telefono" ${ttId && !archivo ? "" : "data-tilt"}><div class="pantalla">${medio}
+        ${v.vistas && !(ttId && !archivo) ? `<span class="vistas">▶ ${esc(v.vistas)}</span>` : ""}${play}${verTT}</div></div>
+      <div class="pie-tarjeta"><span class="marca">${esc(v.etiqueta || v.titulo)}</span><span class="tipo">${esc(v.tipo)}</span></div>
     </article>`;
   };
   const cats = lista(V.categorias).map(c => ({ ...c, id: slug(c.nombre), lista: lista(c.videos) })).filter(c => c.lista.length);
