@@ -29,14 +29,14 @@
           "tiktok": ""
         },
         {
-          "titulo": "Maquillaje que aguanta el entrenamiento",
-          "etiqueta": "Makeup",
+          "titulo": "Lipgloss",
+          "etiqueta": "Ayvanna Rever",
           "tipo": "Antes y después",
           "palabra": "Glam",
           "vistas": "",
-          "video": "",
+          "video": "https://www.tiktok.com/@darleneelmv_/video/7685139591866846485?is_from_webapp=1&sender_device=pc&web_id=7671726502225348113",
           "portada": "",
-          "tiktok": ""
+          "tiktok": "https://www.tiktok.com/@darleneelmv_/video/7685139591866846485?is_from_webapp=1&sender_device=pc&web_id=7671726502225348113"
         }
       ]
     },
@@ -46,14 +46,14 @@
       "estilo": "leopardo",
       "videos": [
         {
-          "titulo": "Outfits de la semana · gym version",
+          "titulo": "Leggins",
           "etiqueta": "Gym fits",
           "tipo": "Moda deportiva",
           "palabra": "Gym",
-          "vistas": "23.9K",
+          "vistas": "9K",
           "video": "",
           "portada": "",
-          "tiktok": "https://www.tiktok.com/@darleneelmv_"
+          "tiktok": "https://www.tiktok.com/@darleneelmv_/video/7627661949333032212?is_from_webapp=1&sender_device=pc&web_id=7671726502225348113"
         },
         {
           "titulo": "Lo que llevo en mi mochila del gym",
@@ -108,6 +108,19 @@
           "video": "",
           "portada": "",
           "tiktok": ""
+        }
+      ]
+    },
+    {
+      "estilo": "rojo",
+      "nombre": "Food",
+      "texto": "Algo rico",
+      "videos": [
+        {
+          "titulo": "Botanas",
+          "video": "https://www.tiktok.com/@darleneelmv_/video/7672527718201789703?is_from_webapp=1&sender_device=pc&web_id=7671726502225348113",
+          "tiktok": "https://www.tiktok.com/@darleneelmv_/video/7672527718201789703?is_from_webapp=1&sender_device=pc&web_id=7671726502225348113",
+          "tipo": " Reseña"
         }
       ]
     }
