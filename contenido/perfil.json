@@ -1,19 +1,40 @@
 {
-  "nombre": "Darlyn",
-  "apellido": "Lova",
   "iniciales": "DL",
-  "etiqueta": "UGC Creator · México",
+  "foto": "/media/whatsapp-image-2026-11-12-at-10.53.53-am.jpeg",
   "frase": "Contenido real que hace brillar tu marca.",
+  "boton_contacto": "Contrátame",
+  "nombre": "Darlyn",
   "temas": [
     "Beauty",
     "Fitness",
     "Lifestyle",
     "GRWM"
   ],
+  "usuario": "@darleneelmv_",
   "boton_videos": "Ver mis videos",
-  "boton_contacto": "Contrátame",
-  "foto": "",
+  "instagram": "",
+  "etiqueta": "UGC Creator · México",
+  "idioma": "Español",
+  "correo": "lopezvazquezdarlene@gmail.com",
+  "tiktok": "https://www.tiktok.com/@darleneelmv_",
+  "cinta1": [
+    "Contenido real",
+    "Beauty",
+    "Fitness",
+    "Lifestyle",
+    "Hecho en México",
+    "UGC"
+  ],
+  "cinta2": [
+    "Reviews",
+    "Unboxing",
+    "GRWM",
+    "Tutoriales",
+    "Antes y después",
+    "Ads"
+  ],
   "sello": "UGC creator ✦ beauty ✦ fitness ✦ mx ✦",
+  "apellido": "Lova",
   "stats": [
     {
       "numero": 15.4,
@@ -31,26 +52,5 @@
       "texto": "Vistas · video top"
     }
   ],
-  "cinta1": [
-    "Contenido real",
-    "Beauty",
-    "Fitness",
-    "Lifestyle",
-    "Hecho en México",
-    "UGC"
-  ],
-  "cinta2": [
-    "Reviews",
-    "Unboxing",
-    "GRWM",
-    "Tutoriales",
-    "Antes y después",
-    "Ads"
-  ],
-  "usuario": "@darleneelmv_",
-  "ubicacion": "México",
-  "idioma": "Español",
-  "correo": "lopezvazquezdarlene@gmail.com",
-  "tiktok": "https://www.tiktok.com/@darleneelmv_",
-  "instagram": ""
+  "ubicacion": "México"
 }
