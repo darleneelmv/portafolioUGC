@@ -1,0 +1,22 @@
+{
+  "etiqueta": "Cómo trabajamos",
+  "titulo": "Fácil, de *principio* a fin",
+  "pasos": [
+    {
+      "titulo": "Brief",
+      "texto": "Me cuentas tu producto, tu objetivo y el estilo que buscas."
+    },
+    {
+      "titulo": "Producto",
+      "texto": "Me envías el producto y acordamos guion, tomas y fecha."
+    },
+    {
+      "titulo": "Grabación",
+      "texto": "Grabo y edito con subtítulos, música y tu estética."
+    },
+    {
+      "titulo": "Entrega",
+      "texto": "Recibes tus videos, con una ronda de ajustes incluida."
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "etiqueta": "Portafolio",
+  "titulo": "Mis *videos*",
+  "subtitulo": "Elige una sección para ver mi contenido.",
+  "categorias": [
+    {
+      "nombre": "Beauty",
+      "texto": "Makeup, skincare, pestañas y todo lo que me hace sentir bonita.",
+      "estilo": "rojo",
+      "videos": [
+        {
+          "titulo": "Pestañitas estilo anime",
+          "etiqueta": "Lashes",
+          "tipo": "Reseña",
+          "palabra": "Lashes",
+          "vistas": "1.4K",
+          "video": "",
+          "portada": "",
+          "tiktok": "https://www.tiktok.com/@darleneelmv_"
+        },
+        {
+          "titulo": "Mi protector solar de todos los días",
+          "etiqueta": "Nivea",
+          "tipo": "Skincare",
+          "palabra": "SPF",
+          "vistas": "",
+          "video": "",
+          "portada": "",
+          "tiktok": ""
+        },
+        {
+          "titulo": "Maquillaje que aguanta el entrenamiento",
+          "etiqueta": "Makeup",
+          "tipo": "Antes y después",
+          "palabra": "Glam",
+          "vistas": "",
+          "video": "",
+          "portada": "",
+          "tiktok": ""
+        }
+      ]
+    },
+    {
+      "nombre": "Fitness",
+      "texto": "Gym, outfits deportivos y lo que uso para entrenar.",
+      "estilo": "leopardo",
+      "videos": [
+        {
+          "titulo": "Outfits de la semana · gym version",
+          "etiqueta": "Gym fits",
+          "tipo": "Moda deportiva",
+          "palabra": "Gym",
+          "vistas": "23.9K",
+          "video": "",
+          "portada": "",
+          "tiktok": "https://www.tiktok.com/@darleneelmv_"
+        },
+        {
+          "titulo": "Lo que llevo en mi mochila del gym",
+          "etiqueta": "Gym bag",
+          "tipo": "Unboxing",
+          "palabra": "Bag",
+          "vistas": "",
+          "video": "",
+          "portada": "",
+          "tiktok": ""
+        }
+      ]
+    },
+    {
+      "nombre": "Lifestyle",
+      "texto": "Mi día a día, rutinas y cosas que valen la pena.",
+      "estilo": "rosa",
+      "videos": [
+        {
+          "titulo": "Arréglate conmigo",
+          "etiqueta": "GRWM",
+          "tipo": "Get ready with me",
+          "palabra": "GRWM",
+          "vistas": "",
+          "video": "",
+          "portada": "",
+          "tiktok": ""
+        },
+        {
+          "titulo": "Un día conmigo",
+          "etiqueta": "Vlog",
+          "tipo": "Lifestyle",
+          "palabra": "Vlog",
+          "vistas": "",
+          "video": "",
+          "portada": "",
+          "tiktok": ""
+        }
+      ]
+    },
+    {
+      "nombre": "Apps",
+      "texto": "Apps que uso y recomiendo de verdad.",
+      "estilo": "vino",
+      "videos": [
+        {
+          "titulo": "Apps que me hubiera gustado conocer al empezar en el gym",
+          "etiqueta": "Hevy",
+          "tipo": "Apps · Fitness",
+          "palabra": "Apps",
+          "vistas": "",
+          "video": "",
+          "portada": "",
+          "tiktok": ""
+        }
+      ]
+    }
+  ]
+}

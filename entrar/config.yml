@@ -1,0 +1,231 @@
+# Panel de administración (Decap CMS)
+# Se abre en: https://TU-SITIO.netlify.app/entrar/
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    update: "Panel: actualiza {{slug}}"
+    uploadMedia: "Panel: sube {{path}}"
+    deleteMedia: "Panel: borra {{path}}"
+
+locale: es
+publish_mode: simple
+media_folder: media
+public_folder: /media
+site_url: /
+display_url: /
+
+collections:
+  - name: sitio
+    label: "Mi sitio"
+    description: "Todo lo que se ve en tu portafolio. Al guardar (Publicar), la página se actualiza en 1 o 2 minutos."
+    editor:
+      preview: false
+    files:
+
+      # ------------------------------------------------------------ VIDEOS
+      - name: videos
+        label: "🎬 Videos"
+        file: contenido/videos.json
+        fields:
+          - { name: etiqueta, label: "Texto pequeño arriba", widget: string }
+          - { name: titulo, label: "Título de la sección", widget: string, hint: "Pon *palabra* entre asteriscos para que salga en cursiva rosa." }
+          - { name: subtitulo, label: "Subtítulo", widget: string, required: false }
+          - name: categorias
+            label: "Categorías"
+            label_singular: "categoría"
+            widget: list
+            summary: "{{fields.nombre}}"
+            hint: "Cada categoría es un botón redondo y un bloque de videos. Arrástralas para cambiar el orden."
+            fields:
+              - { name: nombre, label: "Nombre", widget: string }
+              - { name: texto, label: "Descripción corta", widget: string, required: false }
+              - name: estilo
+                label: "Fondo del botón"
+                widget: select
+                default: rojo
+                options:
+                  - { label: "Rojo", value: rojo }
+                  - { label: "Leopardo", value: leopardo }
+                  - { label: "Rosa", value: rosa }
+                  - { label: "Vino", value: vino }
+              - name: videos
+                label: "Videos"
+                label_singular: "video"
+                widget: list
+                summary: "{{fields.titulo}}"
+                fields:
+                  - { name: titulo, label: "Título del video", widget: string }
+                  - { name: video, label: "Archivo de video (.mp4)", widget: file, required: false, hint: "Sube el video original de tu galería (sin marca de agua). Ideal: menos de 20 MB. Si es más pesado, expórtalo en CapCut a 1080p." }
+                  - { name: portada, label: "Portada (foto)", widget: image, required: false, hint: "Opcional. Se ve mientras carga el video." }
+                  - { name: tiktok, label: "Link del video en TikTok", widget: string, required: false }
+                  - { name: etiqueta, label: "Texto bajo el celular (marca o tema)", widget: string, required: false, hint: "Ej. Nivea, Hevy, Gym fits" }
+                  - { name: tipo, label: "Tipo de video", widget: string, required: false, hint: "Ej. Reseña, Unboxing, GRWM" }
+                  - { name: vistas, label: "Vistas", widget: string, required: false, hint: "Ej. 23.9K. Déjalo vacío si no quieres mostrarlas." }
+                  - { name: palabra, label: "Palabra grande (si aún no hay video)", widget: string, required: false }
+
+      # ------------------------------------------------------------ PERFIL
+      - name: perfil
+        label: "👤 Perfil y portada"
+        file: contenido/perfil.json
+        fields:
+          - { name: nombre, label: "Nombre", widget: string }
+          - { name: apellido, label: "Segunda palabra del nombre (sale con leopardo)", widget: string, required: false }
+          - { name: iniciales, label: "Iniciales del sello", widget: string, required: false }
+          - { name: foto, label: "Foto principal", widget: image, required: false, hint: "Vertical, con buena luz. Se recorta en forma de arco." }
+          - { name: etiqueta, label: "Texto pequeño arriba del nombre", widget: string }
+          - { name: frase, label: "Frase", widget: string }
+          - { name: temas, label: "Temas (chips)", widget: list, field: { name: tema, label: "Tema", widget: string } }
+          - { name: boton_videos, label: "Botón 1", widget: string }
+          - { name: boton_contacto, label: "Botón 2", widget: string }
+          - name: stats
+            label: "Números"
+            label_singular: "número"
+            widget: list
+            summary: "{{fields.numero}}{{fields.sufijo}} {{fields.texto}}"
+            fields:
+              - { name: numero, label: "Número", widget: number, value_type: float }
+              - { name: sufijo, label: "Sufijo (K, M, %)", widget: string, required: false }
+              - { name: texto, label: "Texto", widget: string }
+          - { name: sello, label: "Texto del sello que gira", widget: string, required: false, hint: "Que no sea muy largo (unas 30 letras)." }
+          - { name: cinta1, label: "Cinta roja", widget: list, field: { name: palabra, label: "Palabra", widget: string } }
+          - { name: cinta2, label: "Cinta de leopardo", widget: list, field: { name: palabra, label: "Palabra", widget: string } }
+          - { name: usuario, label: "Usuario de TikTok", widget: string }
+          - { name: tiktok, label: "Link de tu TikTok", widget: string, required: false }
+          - { name: instagram, label: "Link de tu Instagram", widget: string, required: false, hint: "Déjalo vacío para no mostrarlo." }
+          - { name: correo, label: "Correo para colaboraciones", widget: string }
+          - { name: ubicacion, label: "Ubicación", widget: string, required: false }
+          - { name: idioma, label: "Idiomas", widget: string, required: false }
+
+      # ------------------------------------------------------------ SOBRE MÍ
+      - name: sobre_mi
+        label: "💌 Sobre mí"
+        file: contenido/sobre-mi.json
+        fields:
+          - { name: etiqueta, label: "Texto pequeño", widget: string }
+          - { name: titulo, label: "Título", widget: string, hint: "Pon *palabra* entre asteriscos para la cursiva rosa." }
+          - { name: parrafos, label: "Párrafos", widget: list, field: { name: parrafo, label: "Párrafo", widget: text } }
+          - name: fotos
+            label: "Fotos tipo polaroid (2)"
+            widget: list
+            max: 2
+            summary: "{{fields.pie}}"
+            fields:
+              - { name: foto, label: "Foto", widget: image, required: false }
+              - { name: palabra, label: "Palabra si no hay foto", widget: string, required: false }
+              - { name: pie, label: "Texto abajo de la foto", widget: string, required: false }
+
+      # ------------------------------------------------------------ SERVICIOS
+      - name: servicios
+        label: "🃏 Servicios"
+        file: contenido/servicios.json
+        fields:
+          - { name: etiqueta, label: "Texto pequeño", widget: string }
+          - { name: titulo, label: "Título", widget: string }
+          - { name: subtitulo, label: "Subtítulo", widget: text, required: false }
+          - name: cartas
+            label: "Cartas"
+            label_singular: "carta"
+            widget: list
+            summary: "{{fields.indice}}{{fields.palo}} {{fields.titulo}}"
+            fields:
+              - { name: indice, label: "Letra o número de la carta", widget: string, hint: "A, K, Q, J, 10…" }
+              - { name: palo, label: "Palo", widget: select, options: ["♦", "♥", "♠", "♣"], default: "♦" }
+              - { name: titulo, label: "Servicio", widget: string }
+              - { name: texto, label: "Descripción", widget: text }
+              - { name: roja, label: "Carta roja", widget: boolean, default: false }
+
+      # ------------------------------------------------------------ POR QUÉ YO
+      - name: por_que_yo
+        label: "✨ ¿Por qué yo?"
+        file: contenido/por-que-yo.json
+        fields:
+          - { name: cita, label: "Frase grande", widget: text, hint: "Pon *palabras* entre asteriscos para resaltarlas en rosa." }
+          - name: razones
+            label: "Razones"
+            label_singular: "razón"
+            widget: list
+            summary: "{{fields.titulo}}"
+            fields:
+              - { name: titulo, label: "Título", widget: string }
+              - { name: texto, label: "Texto", widget: text }
+
+      # ------------------------------------------------------------ PROCESO
+      - name: proceso
+        label: "🧭 Cómo trabajamos"
+        file: contenido/proceso.json
+        fields:
+          - { name: etiqueta, label: "Texto pequeño", widget: string }
+          - { name: titulo, label: "Título", widget: string }
+          - name: pasos
+            label: "Pasos"
+            label_singular: "paso"
+            widget: list
+            summary: "{{fields.titulo}}"
+            fields:
+              - { name: titulo, label: "Paso", widget: string }
+              - { name: texto, label: "Texto", widget: text }
+
+      # ------------------------------------------------------------ MARCAS
+      - name: marcas
+        label: "🏷️ Marcas"
+        file: contenido/marcas.json
+        fields:
+          - { name: etiqueta, label: "Texto pequeño", widget: string }
+          - { name: titulo, label: "Título", widget: string }
+          - name: marcas
+            label: "Marcas con las que has trabajado"
+            label_singular: "marca"
+            widget: list
+            required: false
+            hint: "Mientras esta lista esté vacía, la sección no aparece en tu página."
+            summary: "{{fields.nombre}}"
+            fields:
+              - { name: nombre, label: "Nombre", widget: string }
+              - { name: logo, label: "Logo", widget: image, required: false }
+              - { name: link, label: "Link (opcional)", widget: string, required: false }
+
+      # ------------------------------------------------------------ CONTACTO
+      - name: contacto
+        label: "📩 Contacto"
+        file: contenido/contacto.json
+        fields:
+          - { name: etiqueta, label: "Texto pequeño", widget: string }
+          - { name: titulo, label: "Título", widget: string }
+          - { name: subtitulo, label: "Subtítulo", widget: string }
+          - { name: boton_copiar, label: "Botón copiar", widget: string }
+          - { name: boton_escribir, label: "Botón escribir", widget: string }
+          - { name: asunto, label: "Asunto del correo", widget: string }
+
+      # ------------------------------------------------------------ DISEÑO
+      - name: general
+        label: "🎨 Diseño y secciones"
+        file: contenido/general.json
+        fields:
+          - name: secciones
+            label: "Secciones visibles"
+            widget: object
+            fields:
+              - { name: sobre, label: "Sobre mí", widget: boolean, default: true }
+              - { name: portafolio, label: "Videos", widget: boolean, default: true }
+              - { name: servicios, label: "Servicios", widget: boolean, default: true }
+              - { name: porque, label: "¿Por qué yo?", widget: boolean, default: true }
+              - { name: proceso, label: "Cómo trabajamos", widget: boolean, default: true }
+              - { name: marcas, label: "Marcas", widget: boolean, default: true }
+              - { name: contacto, label: "Contacto", widget: boolean, default: true }
+          - name: colores
+            label: "Colores"
+            widget: object
+            fields:
+              - { name: rojo, label: "Rojo principal", widget: color }
+              - { name: rosa, label: "Rosa", widget: color }
+              - { name: fondo, label: "Fondo oscuro", widget: color }
+              - { name: leopardo, label: "Tono del leopardo", widget: color }
+          - { name: boton_barra, label: "Botón de la barra de arriba", widget: string }
+          - { name: pie, label: "Texto del pie de página", widget: string }
+          - name: seo
+            label: "Google y link compartido"
+            widget: object
+            fields:
+              - { name: titulo, label: "Título de la pestaña", widget: string }
+              - { name: descripcion, label: "Descripción", widget: text }

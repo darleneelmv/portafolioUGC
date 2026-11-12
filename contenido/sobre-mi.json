@@ -1,0 +1,20 @@
+{
+  "etiqueta": "Sobre mí",
+  "titulo": "Hola, soy *Darlyn*",
+  "parrafos": [
+    "Entreno, me maquillo y pruebo productos de verdad. Hago videos que se sienten como la recomendación de una amiga, no como un anuncio.",
+    "Mi contenido vive entre el gym, el makeup y mi día a día. Mi audiencia en TikTok creció con videos cercanos, con buena música y mucha personalidad, y ahora llevo esa misma energía a las marcas."
+  ],
+  "fotos": [
+    {
+      "foto": "",
+      "palabra": "Gym",
+      "pie": "gym girl"
+    },
+    {
+      "foto": "",
+      "palabra": "Glam",
+      "pie": "glam era"
+    }
+  ]
+}

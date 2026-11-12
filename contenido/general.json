@@ -1,0 +1,23 @@
+{
+  "seo": {
+    "titulo": "Darlyn Lova · UGC Creator MX",
+    "descripcion": "UGC Creator en México. Beauty, fitness y lifestyle. Contenido real que hace brillar tu marca."
+  },
+  "colores": {
+    "rojo": "#c3122b",
+    "rosa": "#f3a7c1",
+    "fondo": "#14040a",
+    "leopardo": "#c8945a"
+  },
+  "secciones": {
+    "sobre": true,
+    "portafolio": true,
+    "servicios": true,
+    "porque": true,
+    "proceso": true,
+    "marcas": true,
+    "contacto": true
+  },
+  "boton_barra": "Trabajemos juntas",
+  "pie": "UGC Creator · Beauty · Fitness · Lifestyle · México"
+}

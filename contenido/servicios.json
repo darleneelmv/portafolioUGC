@@ -1,0 +1,49 @@
+{
+  "etiqueta": "Servicios",
+  "titulo": "Lo que puedo *crear* para ti",
+  "subtitulo": "Videos verticales para TikTok, Reels y anuncios, con subtítulos, ganchos fuertes y la estética de tu marca.",
+  "cartas": [
+    {
+      "indice": "A",
+      "palo": "♦",
+      "titulo": "Reseña honesta",
+      "texto": "Pruebo tu producto y cuento mi experiencia real, a cámara y con naturalidad.",
+      "roja": false
+    },
+    {
+      "indice": "K",
+      "palo": "♥",
+      "titulo": "Unboxing",
+      "texto": "La emoción de abrirlo por primera vez, con detalles, texturas y primeros minutos de uso.",
+      "roja": true
+    },
+    {
+      "indice": "Q",
+      "palo": "♦",
+      "titulo": "GRWM",
+      "texto": "Tu producto dentro de mi rutina: arreglarme para el gym, el trabajo o una salida.",
+      "roja": false
+    },
+    {
+      "indice": "J",
+      "palo": "♥",
+      "titulo": "Antes y después",
+      "texto": "Resultados visibles en un solo video, ideal para makeup, skincare y fitness.",
+      "roja": true
+    },
+    {
+      "indice": "10",
+      "palo": "♦",
+      "titulo": "Tutorial",
+      "texto": "Paso a paso de cómo se usa, para que tu cliente sepa exactamente qué esperar.",
+      "roja": false
+    },
+    {
+      "indice": "9",
+      "palo": "♥",
+      "titulo": "Video para anuncios",
+      "texto": "Ganchos fuertes en los primeros 3 segundos y variaciones listas para tus campañas.",
+      "roja": true
+    }
+  ]
+}
